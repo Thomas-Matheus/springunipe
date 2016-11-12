@@ -1,2 +1,3 @@
 /var/www/workspace/springunipe/src/main/java/com/spring/boot/unipe/Application.java
-/var/www/workspace/springunipe/src/main/java/com/spring/boot/unipe/Livro.java
+/var/www/workspace/springunipe/src/main/java/com/spring/boot/unipe/BookController.java
+/var/www/workspace/springunipe/src/main/java/com/spring/boot/unipe/Book.java

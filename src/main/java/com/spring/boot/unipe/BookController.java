@@ -50,4 +50,12 @@ public class BookController {
 		}
 	}
 	
+	
+	@RequestMapping(value="/book/edit/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<Book> editBook(@PathVariable String id,@RequestBody Book book){
+
+		return book == null ? 
+				new ResponseEntity<Book>(HttpStatus.NOT_FOUND):
+					new ResponseEntity<Book>(book,HttpStatus.OK);
+	}
 }
