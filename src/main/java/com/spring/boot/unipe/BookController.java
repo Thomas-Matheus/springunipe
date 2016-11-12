@@ -58,4 +58,18 @@ public class BookController {
 				new ResponseEntity<Book>(HttpStatus.NOT_FOUND) :
 					new ResponseEntity<Book>(book, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value="/book/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Book> updateBook(@PathVariable String id){
+		
+		try{
+			if(id.isEmpty()) {
+				return new ResponseEntity<Book>(HttpStatus.NOT_FOUND);
+			}
+			
+			return new ResponseEntity<Book>(HttpStatus.NO_CONTENT);
+		} catch (Exception e) {
+			return new ResponseEntity<Book>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 }
