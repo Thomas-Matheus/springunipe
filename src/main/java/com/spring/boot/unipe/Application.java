@@ -9,9 +9,7 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 public class Application extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		SpringApplication.run(Application.class, args);
-
 	}
 
 }
