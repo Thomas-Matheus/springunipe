@@ -59,8 +59,9 @@ public class BookController {
 					new ResponseEntity<Book>(book, HttpStatus.OK);
 	}
 	
+		
 	@RequestMapping(value="/book/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Book> updateBook(@PathVariable String id){
+	public ResponseEntity<Book> deleteBook(@PathVariable String id){
 		
 		try{
 			if(id.isEmpty()) {
