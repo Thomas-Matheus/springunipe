@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Livro implements Serializable {
+public class Book implements Serializable {
 	private static final long serialVersionUID = -7799369695818057571L;
 	
 	@Id
@@ -18,9 +18,19 @@ public class Livro implements Serializable {
 	private String author;
 	private String isbn;
 	
-	public Livro() {
+	public Book() {
 		
 	}
+	
+	
+	public Book(int id, String name, String author, String isbn) {
+		this.id = id;
+		this.name = name;
+		this.author = author;
+		this.isbn = isbn;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -56,7 +66,7 @@ public class Livro implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Livro [id=" + id + ", name=" + name + ", author=" + author + ", isbn=" + isbn + "]";
+		return "Book [id=" + id + ", name=" + name + ", author=" + author + ", isbn=" + isbn + "]";
 	}
 	
 	
