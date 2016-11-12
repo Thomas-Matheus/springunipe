@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BookController {
 	
-	@RequestMapping(value="/books", method = RequestMethod.GET)
+	@RequestMapping(value="/book", method = RequestMethod.GET)
 	public ResponseEntity<List<Book>> listAllBook(){
 		
 		List<Book> listFakeBook = new ArrayList<Book>();
@@ -29,7 +29,7 @@ public class BookController {
 		return new ResponseEntity<List<Book>>(listFakeBook, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/books/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/book/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Book> getBooks(@PathVariable String id){
 		
 		Book book = new Book(1,"Software Architecture", "I don't know","123HAUDHoODJA");
@@ -53,9 +53,9 @@ public class BookController {
 	
 	@RequestMapping(value="/book/edit/{id}", method=RequestMethod.PUT)
 	public ResponseEntity<Book> editBook(@PathVariable String id,@RequestBody Book book){
-
-		return book == null ? 
-				new ResponseEntity<Book>(HttpStatus.NOT_FOUND):
-					new ResponseEntity<Book>(book,HttpStatus.OK);
+		
+		return book == null ?
+				new ResponseEntity<Book>(HttpStatus.NOT_FOUND) :
+					new ResponseEntity<Book>(book, HttpStatus.OK);
 	}
 }
